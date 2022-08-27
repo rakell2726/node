@@ -1,3 +1,4 @@
+//EN ESTE ARCHIVO MANEJAMOS LA CONEXION
 const sql = require('mssql');
 const config = require('../config');
 
@@ -7,7 +8,8 @@ const config = require('../config');
   server: config.dbServer,
   database: config.dbDatabase,
   options:{
-    trustServerCertificate: true
+    encrypt: false,
+    instanceName: 'DOCENTE5'
   },
 };
 

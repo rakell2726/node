@@ -10,12 +10,16 @@ courseController.getAll = async (req,res)=>{
 }
 courseController.create = (req,res)=>{
     //logica para crear un nuevo objeto
-    const id= courses.length+1;
+    
+    //const id= courses.length+1;
     const newCourse = req.body;
-    newCourse["id"]= id; 
-    let result = sum(3,id);
-    courses.push(newCourse);
-    res.json(newCourse);
+    //newCourse["id"]= id; 
+
+    //convertir a modelo
+
+    let modelo= new Course(newCourse.description,newCourse.teacher) ;
+    //courses.push(newCourse);
+  //  res.json(newCourse);
 }
 courseController.update = (req,res)=>{
     //logica para actualizar un curso
